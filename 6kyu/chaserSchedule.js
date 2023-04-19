@@ -19,18 +19,15 @@
 //add up total and push to array
 //sort array largest to smallest, produce the largest value?
 
+function solution(s, t) {
+  let distance = s * t,
+    maxSprints = Math.ceil(t / 2);
+  for (let i = 0; i < maxSprints; i++) {
+    if (s - 3 * i > 0) {
+      distance += s - 3 * i;
+    }
+  }
+  return distance;
+}
 
-// function solution(s, t) { 
-//   const sprint = s*2
-//   let newSpeed = 0;
-//   let recovery = newSpeed - 1
-  
-//   console.log(s + s + s + sprint)
-  
-  
-//   for (let i = 1; i < t; i++) {
-//     // nosprint
-//     newSpeed += s
-//   }
-//   return newSpeed
-// }
+solution(2, 4);
