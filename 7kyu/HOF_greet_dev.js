@@ -11,6 +11,8 @@ var list1 = [
   { firstName: 'Madison', lastName: 'U.', country: 'United States', continent: 'Americas', age: 32, language: 'Ruby' } 
 ];
 
+
+
 function greetDevelopers(list){
   return list.map(function (a) {
     a.greeting = `Hi ${a.firstName}, what do you like the most about ${a.language}?`

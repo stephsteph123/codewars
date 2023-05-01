@@ -37,6 +37,7 @@ var list1 = [
   },
 ];
 
+
 function countDevelopers(list) {
   return list.filter(
     (x) => x.continent === "Europe" && x.language === "JavaScript"
@@ -53,5 +54,5 @@ function countDevelopers(list) {
 //   }
 //   return count
 // }
-
+MS
 countDevelopers(list1);
