@@ -22,7 +22,7 @@ function lastDigit(n, d) {
       newArr.push(char[i])
     }
   }
-  console.log(newArr)
+  return newArr
 }
 
 console.log(lastDigit(1343,5));
