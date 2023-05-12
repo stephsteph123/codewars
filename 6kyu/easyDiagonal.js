@@ -10,13 +10,6 @@ function diagonal(n, p) {
   diagonal = (n,p) => Math.round(fact(++n)/(fact(++p)*fact(n-p)));
 }
 
-
-
-
-
-
-
-
 diagonal(20, 3)
 diagonal(20, 4) 
 diagonal(20, 5) 
