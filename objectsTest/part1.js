@@ -92,10 +92,53 @@ const q2 = function () {
 const q3 = function () {
   const newObj = {};
   for (let i = 0; i < metals.length; i++) {
-    const { name, type} = metals[i];
-    newObj[name] = type; 
+    const { name, type } = metals[i];
+    newObj[name] = type;
   }
   return newObj;
-}
+};
 
 // question 4:
+const q4 = function () {
+  const sortedMetals = metals
+    .sort(
+      (metalA, metalB) => metalB.composition.carbon - metalA.composition.carbon
+    )
+    .map((metal) => metal.name);
+
+  return sortedMetals;
+};
+
+// question 5:
+const q5 = function () {
+  const elements = {};
+
+  for (let i = 0; i < metals.length; i++) {
+    const composition = metals[i].composition;
+    const compositionKeys = Object.keys(composition);
+  
+    for (let j = 0; j < compositionKeys.length; j++) {
+      const element = compositionKeys[j];
+      if (elements[element]) {
+        elements[element].sum += composition[element];
+        elements[element].count += 1;
+      } else {
+        elements[element] = {
+          sum: composition[element],
+          count: 1,
+        };
+      }
+    }
+  }
+  
+  const averageConcentrations = {};
+  const elementKeys = Object.keys(elements);
+  for (let i = 0; i < elementKeys.length; i++) {
+    const element = elementKeys[i];
+    averageConcentrations[element] = elements[element].sum / elements[element].count;
+  }
+  
+  console.log(averageConcentrations);
+}
+
+q5();
